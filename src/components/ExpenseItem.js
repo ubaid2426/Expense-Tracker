@@ -1,14 +1,18 @@
 import "./ExpenseItem.css";
+import ExpenseDate from "./ExpenseDate.js";
+import Card from "./Card.js";
+
 const ExpenseItem = (props) => {
-  
   return (
-    <div className="expense-item">
-      <div style={{ color: "white" }}> {props.date.toISOString()}</div>
+    <Card className="expense-item">
+      <div>
+        <ExpenseDate date={props.date} />
+      </div>
       <div className="expense-item__description">
         <h2>{props.title}</h2>
         <div className="expense-item__price">Rs. {props.amount}/-</div>
       </div>
-    </div>
+    </Card>
   );
 };
 
