@@ -1,10 +1,11 @@
 import "./Expenses.css";
 import ExpenseItem from "./ExpenseItem";
-import Card from "./Card";
-import NewExpense from "./NewExpense";
+import Card from "../UI/Card";
+import NewExpense from "../New Expense/NewExpense";
 import expenses from "./dummyexpenses";
 import { useState } from "react";
 import ExpenseFilter from "./ExpenseFilter";
+import ExpenseChart from "./ExpenseChart";
 const Expenses = (props) => {
   const [filteredYear, setFilteredYear] = useState(2020);
   const [expensesData, setExpensesData] = useState(expenses);
@@ -22,6 +23,7 @@ const Expenses = (props) => {
   return (
     <Card className="expenses">
       <NewExpense onSaveForm={submitFormHandler} />
+      <ExpenseChart datapoints={filterYearData} />
       <ExpenseFilter
         selected={filteredYear}
         onChangeFilter={filteredYearHandler}

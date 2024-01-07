@@ -1,5 +1,5 @@
-import Expenses from "./components/Expenses";
-import expenses from "./components/dummyexpenses";
+import Expenses from "./components/Expenses/Expenses";
+import expenses from "./components/Expenses/dummyexpenses";
 function App() {
 
   return (
